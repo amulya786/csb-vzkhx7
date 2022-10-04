@@ -1,0 +1,394 @@
+body {
+  background-color: #0c111b;
+  margin: 0;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  background-color: #111826;
+  height: 90px;
+}
+@media only screen and (max-width: 925px) {
+  .search,
+  .button,
+  .login {
+    display: none;
+  }
+}
+.navbar ul {
+  display: flex;
+  align-items: center;
+  color: white;
+  display: flex;
+}
+
+.navbar ul li {
+  list-style: none;
+  padding: 10px;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+.navbar ul li a:hover {
+  color: lightblue;
+}
+
+.logo {
+  font-weight: bold;
+  filter: invert();
+  width: 150px;
+}
+
+.search {
+  color: white;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid rgb(29, 95, 225);
+  width: 200px;
+  transition: width 2s;
+}
+
+.search:focus {
+  width: 500px;
+}
+
+.button {
+  /* height: 20px; */
+  color: white;
+  padding: 1;
+  background-color: rgb(18, 92, 195);
+  padding-left: 10;
+  padding-right: 10;
+  border: none;
+  border-radius: 5px;
+}
+
+/* video container  */
+
+.video-container {
+  position: relative;
+  width: 92%;
+  margin: auto;
+  height: 10vw;
+  display: flex;
+  margin-bottom: 20px;
+  justify-content: space-between;
+}
+
+.video-list {
+  position: relative;
+  min-width: calc(100% / 5 - 10px);
+  width: calc(100% / 5 - 10px);
+  height: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: black;
+}
+
+.videoImg,
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video {
+  position: absolute;
+  cursor: pointer;
+}
+
+.video-list:hover .videoImg {
+  display: none;
+}
+
+/* the main carousel css starts here  */
+
+.carousel-content {
+  position: relative;
+  width: 100%;
+  height: 450px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.carousel {
+  display: flex;
+  width: 92%;
+  height: 100%;
+  position: relative;
+  margin: auto;
+  background-color: black;
+}
+
+.slider {
+  flex: 0 0 auto;
+  margin-right: 30px;
+  position: relative;
+  background-color: gray;
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  transition: 1s;
+  overflow: hidden;
+}
+
+.slider img {
+  width: 70%;
+  min-height: 100%;
+  object-fit: cover;
+  display: block;
+  margin-left: auto;
+}
+
+.slider-content {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  z-index: 2;
+  background: linear-gradient(to right, #030b17 80%, #0c111b00);
+  color: white;
+}
+
+.movie-title {
+  padding-left: 50px;
+  text-transform: capitalize;
+  margin-top: 80px;
+}
+
+.movie-des {
+  width: 80%;
+  line-height: 30px;
+  padding-left: 50px;
+  margin-top: 30px;
+  opacity: 0.8;
+}
+
+/* cards css starts here  */
+
+.nxt,
+.pre {
+  position: absolute;
+  top: 10;
+  width: 3%;
+  height: 100%;
+  z-index: 5;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.pre {
+  left: 0;
+  background: linear-gradient(to right, #12151b 0%, #0c111b00);
+}
+
+.nxt {
+  right: 0;
+  background: linear-gradient(to left, #12151b 0%, #0c111b00);
+}
+
+.nxt img,
+.pre img {
+  width: 15px;
+  height: 20px;
+  opacity: 0;
+}
+
+.nxt:hover img,
+.pre:hover img {
+  opacity: 1;
+}
+
+.title {
+  color: white;
+  opacity: 0.9;
+  padding-left: 4%;
+  text-transform: capitalize;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.movies-list {
+  /* display: flex; */
+  width: 100%;
+  height: 220px;
+  padding-left: 58px;
+  position: relative;
+  margin: 10px 0 20px;
+  overflow: hidden;
+}
+
+.card-containers {
+  position: absolute;
+  width: 92%;
+  padding: 0px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  height: 240px;
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  overflow-x: auto;
+  overflow-y: visible;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.cards {
+  position: relative;
+  min-width: 150px;
+  width: 150px;
+  height: 200px;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-right: 30px;
+  transition: 0.5s;
+  background-color: black;
+}
+
+.cards:hover {
+  transform: scale(1.2);
+  z-index: 3;
+  overflow: hidden;
+}
+
+.cards:hover .card-body {
+  opacity: 1;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-body {
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background: linear-gradient(to bottom, rgba(4, 8, 15, 0), #192133 90%);
+  padding: 10px;
+  transition: 0.5s;
+}
+
+.name {
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+  text-transform: capitalize;
+  margin-top: 60%;
+  text-align: center;
+}
+
+.des {
+  color: white;
+  opacity: 0.8;
+  margin: 5px 0;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.watchlist-button {
+  width: 100%;
+  position: absolute;
+  left: 0px;
+  bottom: 10px;
+  text-transform: capitalize;
+  background: none;
+  border: none;
+  font-weight: 500;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.watchlist-button::before {
+  content: "";
+  position: absolute;
+  top: -3;
+  left: 0px;
+  height: 35px;
+  width: 35px;
+  background-image: url("add.png");
+  background-size: cover;
+  transform: scale(0.4);
+}
+
+.watchlist-button:hover {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* footer css starts here  */
+
+.footer {
+  margin: 0;
+  display: flex;
+  color: white;
+  position: relative;
+  padding: 30px;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.about {
+  width: 50%;
+}
+
+.footer a {
+  margin-left: 10px;
+  color: white;
+  text-decoration: none;
+  width: 30%;
+}
+
+.footer a:hover {
+  color: rgb(12, 106, 237);
+}
+
+.app i {
+  font-size: 30px;
+}
+
+.about p {
+  font-size: 10px;
+}
+
+.contacts {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+}
+
+.app {
+  width: 20%;
+}
+
+.btnn {
+  padding: 0;
+  /* border: 2px solid black; */
+  background-image: url("appbutton.png");
+  background-repeat: no-repeat;
+  background-position: 10px;
+  background-size: 125px;
+  width: 100%;
+  height: 100%;
+}
+
+.btnn:hover {
+  cursor: pointer;
+}
